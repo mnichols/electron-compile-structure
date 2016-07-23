@@ -1,0 +1,29 @@
+{
+  "name": "electron-compile-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf build && rm -rf ./src/.cache",
+    "app:Darwin-asar": "npm run clean && electron-packager-compile src --asar --version=1.2.7 --platform=darwin --arch=all --overwrite --out=build",
+    "start": "electron ./src",
+    "asared": "export DEBUG=*,-babel && npm run app:Darwin-asar && open build/src-darwin-x64/src.app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnichols/electron-compile-structure.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnichols/electron-compile-structure/issues"
+  },
+  "homepage": "https://github.com/mnichols/electron-compile-structure#readme",
+  "devDependencies": {
+    "asar": "^0.11.0",
+    "electron-compile": "^3.3.5",
+    "electron-compilers": "^3.1.6",
+    "electron-packager": "^7.3.0",
+    "electron-prebuilt-compile": "^1.2.7"
+  }
+}
