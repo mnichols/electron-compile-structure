@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf build && rm -rf ./src/.cache",
-    "app:Darwin-asar": "npm run clean && electron-packager-compile src --asar --version=1.2.7 --platform=darwin --arch=all --overwrite --out=build",
-    "app:Darwin": "npm run clean && electron-packager-compile src --version=1.2.7 --platform=darwin --arch=all --overwrite --out=build",
-    "start": "electron ./src",
-    "asared": "export DEBUG=*,-babel && npm run app:Darwin-asar && open build/src-darwin-x64/src.app",
-    "nonasared": "export DEBUG=*,-babel && npm run app:Darwin && open build/src-darwin-x64/src.app"
+    "app:Darwin-asar": "npm run clean && electron-packager-compile . --asar --version=1.2.7 --platform=darwin --arch=all --overwrite --out=build",
+    "app:Darwin": "npm run clean && electron-packager-compile . --version=1.2.7 --platform=darwin --arch=all --overwrite --out=build",
+    "start": "electron .",
+    "asared": "export DEBUG=*,-babel && npm run app:Darwin-asar && open build/electron-compile-structure-darwin-x64/electron-compile-structure.app",
+    "nonasared": "export DEBUG=*,-babel && npm run app:Darwin && open build/electron-compile-structure-darwin-x64/electron-compile-structure.app"
   },
   "repository": {
     "type": "git",
