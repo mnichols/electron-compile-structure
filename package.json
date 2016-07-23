@@ -6,8 +6,10 @@
   "scripts": {
     "clean": "rm -rf build && rm -rf ./src/.cache",
     "app:Darwin-asar": "npm run clean && electron-packager-compile src --asar --version=1.2.7 --platform=darwin --arch=all --overwrite --out=build",
+    "app:Darwin": "npm run clean && electron-packager-compile src --version=1.2.7 --platform=darwin --arch=all --overwrite --out=build",
     "start": "electron ./src",
-    "asared": "export DEBUG=*,-babel && npm run app:Darwin-asar && open build/src-darwin-x64/src.app"
+    "asared": "export DEBUG=*,-babel && npm run app:Darwin-asar && open build/src-darwin-x64/src.app",
+    "nonasared": "export DEBUG=*,-babel && npm run app:Darwin && open build/src-darwin-x64/src.app"
   },
   "repository": {
     "type": "git",
